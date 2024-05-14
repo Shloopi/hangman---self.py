@@ -71,7 +71,7 @@ def game_over(secret_word, num_of_tries):
     if (check_lose(num_of_tries)):
         print("LOSE\n")
     else:
-        print("WIN in", str(num_of_tries), "tries.\n")
+        print("WIN in", str(num_of_tries), "fails.\n")
         
     print("The word was: " + secret_word)
     
@@ -101,7 +101,7 @@ def game_loop():
     print(show_hidden_word(secret_word, letters_guessed))
         
     # run as long as the game is not over.
-    while not check_lose(num_of_tries) and not check_win(secret_word, letters_guessed):
+    while (not check_lose(num_of_tries)) and (not check_win(secret_word, letters_guessed)):
         # ask the player for a guess.
         guess = ask_for_a_guess(letters_guessed)
         

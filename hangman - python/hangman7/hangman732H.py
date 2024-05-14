@@ -1,15 +1,14 @@
 def check_win(secret_word, old_letters_guessed):
-    """_summary_
+    """ this function checks if the player has won the game.
 
     Args:
         secret_word (String): the secret word.
         old_letters_guessed (list (char)): a list of letters guessed by the player.
 
     Returns:
-        _type_: _description_
+        boolean: True if the player has won, False otherwise.
     """
-    # if the length of the secret word is greater than the length of the old letters guessed, the player has not won.
-    win = len(secret_word) <= len(old_letters_guessed)
+    win = True
     i = 0
     
     # iterate through the secret word.
@@ -20,11 +19,15 @@ def check_win(secret_word, old_letters_guessed):
     
     return win
 
-# secret_word = "friends"
-# old_letters_guessed = ['m', 'p', 'j', 'i', 's', 'k']
-# print(check_win(secret_word, old_letters_guessed))
 
-# secret_word = "yes"
-# old_letters_guessed = ['d', 'g', 'e', 'i', 's', 'k', 'y']
-# print(check_win(secret_word, old_letters_guessed))
- 
+secret_word = "friends"
+old_letters_guessed = ['m', 'p', 'j', 'i', 's', 'k']
+print(check_win(secret_word, old_letters_guessed))
+
+secret_word = "yes"
+old_letters_guessed = ['d', 'g', 'e', 'i', 's', 'k', 'y']
+print(check_win(secret_word, old_letters_guessed))
+
+secret_word = "hangman"
+old_letters_guessed = ['a', 'g', 'h', 'm', 'n']
+print(check_win(secret_word, old_letters_guessed))

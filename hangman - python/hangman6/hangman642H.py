@@ -7,14 +7,18 @@ def try_update_letter_guessed(letter_guessed, old_letters_guessed):
         letter_guessed: a string.
         old_letters_guessed: a list of strings.
     """
+    # check if the letter is valid.
     valid = check_valid_input(letter_guessed, old_letters_guessed)
+    
+    # get the lower case version of the letter.
     letter_guessed = letter_guessed.lower()
     
-    if (valid):
-        old_letters_guessed.append(letter_guessed)
+    if (valid): # if the letter is valid.
+        old_letters_guessed.append(letter_guessed) # append the letter to the list.
     else:
+        # otherwise sort the list and print the letters in the list.
         old_letters_guessed.sort()
-        print("X")
+        print("\nguess in not valid.\nprevious guesses:")
         print(" -> ".join(old_letters_guessed))
     return valid
 
